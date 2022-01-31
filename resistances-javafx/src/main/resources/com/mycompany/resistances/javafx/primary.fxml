@@ -10,10 +10,6 @@
    <children>
       <Pane fx:id="PaneResistance" layoutX="34.0" layoutY="61.0" prefHeight="244.0" prefWidth="682.0">
          <children>
-            <Slider fx:id="Slider5" layoutX="476.0" layoutY="187.0" prefHeight="16.0" prefWidth="48.0" />
-            <Slider fx:id="Slider4" layoutX="371.0" layoutY="187.0" prefHeight="16.0" prefWidth="48.0" />
-            <Slider fx:id="Slider3" layoutX="300.0" layoutY="187.0" prefHeight="16.0" prefWidth="48.0" />
-            <Slider fx:id="Slider2" layoutX="229.0" layoutY="187.0" prefHeight="16.0" prefWidth="48.0" />
             <ImageView fx:id="ImageRes" fitHeight="129.0" fitWidth="603.0" layoutX="41.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../Images/resistance.png" />
@@ -21,10 +17,14 @@
             </ImageView>
             <Rectangle fx:id="Rcouleur1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="107.0" layoutX="174.5" layoutY="69.0" stroke="BLACK" strokeType="INSIDE" width="28.0" />
             <Rectangle fx:id="Rcouleur5" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" height="107.0" layoutX="486.5" layoutY="69.0" stroke="BLACK" strokeType="INSIDE" width="28.0" />
-            <Slider fx:id="Slider1" layoutX="164.0" layoutY="187.0" max="11.0" prefHeight="16.0" prefWidth="48.0" />
             <Rectangle fx:id="Rcouleur4" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" height="91.0" layoutX="382.5" layoutY="77.0" stroke="BLACK" strokeType="INSIDE" width="28.0" />
             <Rectangle fx:id="Rcouleur3" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" height="91.0" layoutX="311.25" layoutY="77.0" stroke="BLACK" strokeType="INSIDE" width="28.0" />
             <Rectangle fx:id="Rcouleur2" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" height="91.0" layoutX="240.0" layoutY="77.0" stroke="BLACK" strokeType="INSIDE" width="28.0" />
+            <Slider fx:id="Slider1" blockIncrement="1.0" layoutX="190.0" layoutY="76.0" majorTickUnit="1.0" max="11.0" minorTickCount="0" orientation="VERTICAL" prefHeight="91.0" prefWidth="48.0" snapToTicks="true" />
+            <Slider fx:id="Slider11" blockIncrement="1.0" layoutX="256.0" layoutY="76.0" majorTickUnit="1.0" max="11.0" minorTickCount="0" orientation="VERTICAL" prefHeight="91.0" prefWidth="48.0" snapToTicks="true" />
+            <Slider fx:id="Slider111" blockIncrement="1.0" layoutX="327.0" layoutY="76.0" majorTickUnit="1.0" max="11.0" minorTickCount="0" orientation="VERTICAL" prefHeight="91.0" prefWidth="48.0" snapToTicks="true" />
+            <Slider fx:id="Slider1111" blockIncrement="1.0" layoutX="398.0" layoutY="76.0" majorTickUnit="1.0" max="11.0" minorTickCount="0" orientation="VERTICAL" prefHeight="91.0" prefWidth="48.0" snapToTicks="true" />
+            <Slider fx:id="Slider11111" blockIncrement="1.0" layoutX="502.0" layoutY="76.0" majorTickUnit="1.0" max="11.0" minorTickCount="0" orientation="VERTICAL" prefHeight="91.0" prefWidth="48.0" snapToTicks="true" />
          </children>
       </Pane>
    </children>
