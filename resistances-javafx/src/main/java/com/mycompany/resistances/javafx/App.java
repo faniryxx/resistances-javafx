@@ -8,6 +8,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.HashMap;
+import javafx.scene.paint.Color;
 
 /**
  * JavaFX App
@@ -15,9 +17,13 @@ import java.io.IOException;
 public class App extends Application {
 
     private static Scene scene;
+    public static Calculs calcul;
+    public static HashMap<Integer, Color> colorValuesbyIndex;
 
     @Override
     public void start(Stage stage) throws IOException {
+        calcul = new Calculs();
+        colorValuesbyIndex = calcul.colorValuesbyIndex;
         scene = new Scene(loadFXML("primary"));
         stage.setScene(scene);
         stage.setTitle("Calcul résistance");

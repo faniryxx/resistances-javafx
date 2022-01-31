@@ -1,11 +1,12 @@
 package com.mycompany.resistances.javafx;
 
-import java.io.IOException;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.Slider;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -39,9 +40,25 @@ public class PrimaryController {
     private Pane Global;
     @FXML
     private Pane PaneResistance;
-    
+        
     public void initialize(URL location, ResourceBundle resources) {
         image.setVisible(true);
     }
    
+    public void changeColor(MouseEvent event){
+        Slider slider = (Slider)event.getSource();
+        Double sliderValue = slider.getValue();
+        Integer sliderValueInt = sliderValue.intValue();
+        Color color = App.colorValuesbyIndex.get(sliderValueInt);
+        if(slider == Slider1) 
+            Rcouleur1.setFill(color);
+        else if(slider == Slider2) 
+            Rcouleur2.setFill(color);
+        else if(slider == Slider3) 
+            Rcouleur3.setFill(color);
+        else if(slider == Slider4) 
+            Rcouleur4.setFill(color);
+        else if(slider == Slider5) 
+            Rcouleur5.setFill(color);
+    }
 }
