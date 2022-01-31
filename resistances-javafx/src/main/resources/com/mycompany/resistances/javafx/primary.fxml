@@ -14,17 +14,17 @@
             <Slider layoutX="359.0" layoutY="187.0" prefHeight="16.0" prefWidth="48.0" />
             <Slider layoutX="288.0" layoutY="187.0" prefHeight="16.0" prefWidth="48.0" />
             <Slider layoutX="217.0" layoutY="187.0" prefHeight="16.0" prefWidth="48.0" />
-            <ImageView fx:id="image" fitHeight="129.0" fitWidth="603.0" layoutX="41.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="ImageRes" fitHeight="129.0" fitWidth="603.0" layoutX="41.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../Images/resistance.png" />
                </image>
             </ImageView>
-            <Rectangle fx:id="urectangle1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="107.0" layoutX="174.5" layoutY="69.0" stroke="BLACK" strokeType="INSIDE" width="28.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" height="107.0" layoutX="486.5" layoutY="69.0" stroke="BLACK" strokeType="INSIDE" width="28.0" />
+            <Rectangle fx:id="Rcouleur1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="107.0" layoutX="174.5" layoutY="69.0" stroke="BLACK" strokeType="INSIDE" width="28.0" />
+            <Rectangle fx:id="Rcouleur5" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" height="107.0" layoutX="486.5" layoutY="69.0" stroke="BLACK" strokeType="INSIDE" width="28.0" />
             <Slider layoutX="152.0" layoutY="187.0" prefHeight="16.0" prefWidth="48.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" height="91.0" layoutX="382.5" layoutY="77.0" stroke="BLACK" strokeType="INSIDE" width="28.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" height="91.0" layoutX="311.25" layoutY="77.0" stroke="BLACK" strokeType="INSIDE" width="28.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" height="91.0" layoutX="240.0" layoutY="77.0" stroke="BLACK" strokeType="INSIDE" width="28.0" />
+            <Rectangle fx:id="Rcouleur4" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" height="91.0" layoutX="382.5" layoutY="77.0" stroke="BLACK" strokeType="INSIDE" width="28.0" />
+            <Rectangle fx:id="Rcouleur3" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" height="91.0" layoutX="311.25" layoutY="77.0" stroke="BLACK" strokeType="INSIDE" width="28.0" />
+            <Rectangle fx:id="Rcouleur2" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" height="91.0" layoutX="240.0" layoutY="77.0" stroke="BLACK" strokeType="INSIDE" width="28.0" />
          </children>
       </Pane>
    </children>
