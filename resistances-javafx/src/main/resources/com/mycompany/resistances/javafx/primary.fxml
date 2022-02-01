@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
@@ -20,11 +22,17 @@
             <Rectangle fx:id="Rcouleur4" arcHeight="5.0" arcWidth="5.0" fill="#db0000" height="91.0" layoutX="382.5" layoutY="77.0" stroke="BLACK" strokeType="INSIDE" width="28.0" />
             <Rectangle fx:id="Rcouleur3" arcHeight="5.0" arcWidth="5.0" height="91.0" layoutX="311.25" layoutY="77.0" stroke="BLACK" strokeType="INSIDE" width="28.0" />
             <Rectangle fx:id="Rcouleur2" arcHeight="5.0" arcWidth="5.0" fill="#0d00bf" height="91.0" layoutX="240.0" layoutY="77.0" stroke="BLACK" strokeType="INSIDE" width="28.0" />
-            <Slider fx:id="Slider1" blockIncrement="1.0" layoutX="190.0" layoutY="76.0" majorTickUnit="1.0" max="9.0" minorTickCount="0" onContextMenuRequested="#changeColor" onMouseClicked="#changeColor" onMouseDragged="#changeColor" onMouseEntered="#changeColor" onMouseExited="#changeColor" onMouseMoved="#changeColor" onMousePressed="#changeColor" onMouseReleased="#changeColor" onScroll="#changeColor" onScrollFinished="#changeColor" onScrollStarted="#changeColor" orientation="VERTICAL" prefHeight="91.0" prefWidth="48.0" snapToTicks="true" value="5.0" />
-            <Slider fx:id="Slider2" blockIncrement="1.0" layoutX="256.0" layoutY="76.0" majorTickUnit="1.0" max="9.0" minorTickCount="0" onContextMenuRequested="#changeColor" onMouseClicked="#changeColor" onMouseDragged="#changeColor" onMouseEntered="#changeColor" onMouseExited="#changeColor" onMouseMoved="#changeColor" onMousePressed="#changeColor" onMouseReleased="#changeColor" onScroll="#changeColor" onScrollFinished="#changeColor" onScrollStarted="#changeColor" orientation="VERTICAL" prefHeight="91.0" prefWidth="48.0" snapToTicks="true" value="6.0" />
-            <Slider fx:id="Slider3" blockIncrement="1.0" layoutX="327.0" layoutY="76.0" majorTickUnit="1.0" max="9.0" minorTickCount="0" onContextMenuRequested="#changeColor" onMouseClicked="#changeColor" onMouseDragged="#changeColor" onMouseEntered="#changeColor" onMouseExited="#changeColor" onMouseMoved="#changeColor" onMousePressed="#changeColor" onMouseReleased="#changeColor" onScroll="#changeColor" onScrollFinished="#changeColor" onScrollStarted="#changeColor" orientation="VERTICAL" prefHeight="91.0" prefWidth="48.0" snapToTicks="true" />
-            <Slider fx:id="Slider4" blockIncrement="1.0" layoutX="398.0" layoutY="76.0" majorTickUnit="1.0" max="11.0" minorTickCount="0" onContextMenuRequested="#changeColor" onMouseClicked="#changeColor" onMouseDragged="#changeColor" onMouseEntered="#changeColor" onMouseExited="#changeColor" onMouseMoved="#changeColor" onMousePressed="#changeColor" onMouseReleased="#changeColor" onScroll="#changeColor" onScrollFinished="#changeColor" onScrollStarted="#changeColor" orientation="VERTICAL" prefHeight="91.0" prefWidth="48.0" snapToTicks="true" value="2.0" />
-            <Slider fx:id="Slider5" blockIncrement="1.0" layoutX="502.0" layoutY="76.0" majorTickUnit="1.0" max="11.0" minorTickCount="0" onContextMenuRequested="#changeColor" onMouseClicked="#changeColor" onMouseDragged="#changeColor" onMouseEntered="#changeColor" onMouseExited="#changeColor" onMouseMoved="#changeColor" onMousePressed="#changeColor" onMouseReleased="#changeColor" onScroll="#changeColor" onScrollFinished="#changeColor" onScrollStarted="#changeColor" orientation="VERTICAL" prefHeight="91.0" prefWidth="48.0" snapToTicks="true" value="3.0" />
+            <Slider fx:id="Slider1" blockIncrement="1.0" layoutX="190.0" layoutY="76.0" majorTickUnit="1.0" max="9.0" minorTickCount="0" onMouseClicked="#changeColor" onMouseDragged="#changeColor" onMouseEntered="#changeColor" onMouseExited="#changeColor" onMouseMoved="#changeColor" onMousePressed="#changeColor" onMouseReleased="#changeColor" orientation="VERTICAL" prefHeight="91.0" prefWidth="48.0" snapToTicks="true" value="5.0" />
+            <Slider fx:id="Slider2" blockIncrement="1.0" layoutX="256.0" layoutY="76.0" majorTickUnit="1.0" max="9.0" minorTickCount="0" onMouseClicked="#changeColor" onMouseDragged="#changeColor" onMouseEntered="#changeColor" onMouseExited="#changeColor" onMouseMoved="#changeColor" onMousePressed="#changeColor" onMouseReleased="#changeColor" orientation="VERTICAL" prefHeight="91.0" prefWidth="48.0" snapToTicks="true" value="6.0" />
+            <Slider fx:id="Slider3" blockIncrement="1.0" layoutX="327.0" layoutY="76.0" majorTickUnit="1.0" max="9.0" minorTickCount="0" onMouseClicked="#changeColor" onMouseDragged="#changeColor" onMouseEntered="#changeColor" onMouseExited="#changeColor" onMouseMoved="#changeColor" onMousePressed="#changeColor" onMouseReleased="#changeColor" orientation="VERTICAL" prefHeight="91.0" prefWidth="48.0" snapToTicks="true" />
+            <Slider fx:id="Slider4" blockIncrement="1.0" layoutX="398.0" layoutY="76.0" majorTickUnit="1.0" max="11.0" minorTickCount="0" onMouseClicked="#changeColor" onMouseDragged="#changeColor" onMouseEntered="#changeColor" onMouseExited="#changeColor" onMouseMoved="#changeColor" onMousePressed="#changeColor" onMouseReleased="#changeColor" orientation="VERTICAL" prefHeight="91.0" prefWidth="48.0" snapToTicks="true" value="2.0" />
+            <Slider fx:id="Slider5" blockIncrement="1.0" layoutX="502.0" layoutY="76.0" majorTickUnit="1.0" max="11.0" minorTickCount="0" onMouseClicked="#changeColor" onMouseDragged="#changeColor" onMouseEntered="#changeColor" onMouseExited="#changeColor" onMouseMoved="#changeColor" onMousePressed="#changeColor" onMouseReleased="#changeColor" orientation="VERTICAL" prefHeight="91.0" prefWidth="48.0" snapToTicks="true" value="3.0" />
+         </children>
+      </Pane>
+      <Pane layoutX="93.0" layoutY="332.0" prefHeight="83.0" prefWidth="576.0">
+         <children>
+            <Label layoutX="21.0" layoutY="27.0" prefHeight="21.0" prefWidth="199.0" text="Valeur calculée de la résistance:" />
+            <TextField fx:id="resistanceValueTextField" editable="false" layoutX="288.0" layoutY="24.0" prefHeight="21.0" prefWidth="270.0" />
          </children>
       </Pane>
    </children>
