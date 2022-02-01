@@ -30,19 +30,14 @@ public class PrimaryController {
     private Rectangle Rcouleur2;
     @FXML
     private Slider Slider5;
-    private Double Slider5Value;
     @FXML
     private Slider Slider4;
-    private Double Slider4Value;
     @FXML
     private Slider Slider3;
-    private Double Slider3Value;
     @FXML
     private Slider Slider2;
-    private Double Slider2Value;
     @FXML
     private Slider Slider1;
-    private Double Slider1Value;
     @FXML
     private Pane Global;
     @FXML
@@ -76,21 +71,20 @@ public class PrimaryController {
         Integer sliderValueInt = sliderValue.intValue();
         Color color = App.colorValuesbyIndex.get(sliderValueInt);
         
-        if(slider == Slider1) {
+        if(slider == Slider1) 
             Rcouleur1.setFill(color);
-        }
-        else if(slider == Slider2) {
+        
+        else if(slider == Slider2) 
             Rcouleur2.setFill(color);
-        }
-        else if(slider == Slider3) {
+        
+        else if(slider == Slider3) 
             Rcouleur3.setFill(color);
-        }
-        else if(slider == Slider4) {
+        
+        else if(slider == Slider4) 
             Rcouleur4.setFill(color);
-        }
-        else if(slider == Slider5) { 
+        
+        else if(slider == Slider5)
             Rcouleur5.setFill(color);
-        }
         
         // Do calculations
         Calculs calcul = new Calculs();
