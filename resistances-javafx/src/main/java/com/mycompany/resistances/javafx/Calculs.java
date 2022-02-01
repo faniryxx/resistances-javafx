@@ -6,55 +6,40 @@ import java.util.ArrayList;
 import javafx.scene.paint.Color;
 
 public class Calculs {
-    // Colors and their values on resistance value bands
-    public static HashMap<String, String> Colors;
-    
-    // Colors and their values on multiplicator band
-    public static HashMap<String, Integer> Multiplicateurs;
-    
-    // Colors and their values on tolerance band
-    public static HashMap<String, String> Tolerance;
-    
-    public HashMap<Integer, Color> colorValuesbyIndex;
+
+    public static HashMap<Integer, Color> colorValuesbyIndex;
+    public static HashMap<Integer, Double> multiplierValuesbyIndex;
+    public static HashMap<Integer, Double> toleranceValuesbyIndex;
 
     Calculs(){
-        Colors = new HashMap<String, String>();
-        Colors.put("Black","0");
-        Colors.put("Brown","1");
-        Colors.put("Red","2");
-        Colors.put("Orange","3");
-        Colors.put("Yellow","4");
-        Colors.put("Green","5");
-        Colors.put("Blue","6");
-        Colors.put("Purple","7");
-        Colors.put("Gray","8");
-        Colors.put("White","9");
         
-        Multiplicateurs = new HashMap<String, Integer>();
-        Multiplicateurs.put("Black",1);
-        Multiplicateurs.put("Brown",10);
-        Multiplicateurs.put("Red",100);
-        Multiplicateurs.put("Orange",1000);
-        Multiplicateurs.put("Yellow",10000);
-        Multiplicateurs.put("Green",100000);
-        Multiplicateurs.put("Blue",1000000);
-        Multiplicateurs.put("Purple",10000000);
-        Multiplicateurs.put("Gray",100000000);
-        Multiplicateurs.put("White",1000000000);
+        multiplierValuesbyIndex = new HashMap<Integer, Double>();
+        multiplierValuesbyIndex.put(0,1.0);
+        multiplierValuesbyIndex.put(1,10.0);
+        multiplierValuesbyIndex.put(2,100.0);
+        multiplierValuesbyIndex.put(3,1000.0);
+        multiplierValuesbyIndex.put(4,10000.0);
+        multiplierValuesbyIndex.put(5,100000.0);
+        multiplierValuesbyIndex.put(6,1000000.0);
+        multiplierValuesbyIndex.put(7,10000000.0);
+        multiplierValuesbyIndex.put(8,100000000.0);
+        multiplierValuesbyIndex.put(9,1000000000.0);
+        multiplierValuesbyIndex.put(10,0.1);
+        multiplierValuesbyIndex.put(11,0.01);
         
-        Tolerance = new HashMap<String, String>();
-        Tolerance.put("Black","");
-        Tolerance.put("Brown","1%");
-        Tolerance.put("Red","2%");
-        Tolerance.put("Orange","");
-        Tolerance.put("Yellow","");
-        Tolerance.put("Green","0.5%");
-        Tolerance.put("Blue","0.25%");
-        Tolerance.put("Purple","0.1%");
-        Tolerance.put("Gray","0.05%");
-        Tolerance.put("White","");
-        Tolerance.put("Gold","5%");
-        Tolerance.put("White","10%");
+        toleranceValuesbyIndex = new HashMap<Integer, Double>();
+        toleranceValuesbyIndex.put(0,0.0);
+        toleranceValuesbyIndex.put(1,1.0);
+        toleranceValuesbyIndex.put(2,2.0);
+        toleranceValuesbyIndex.put(3,0.0);
+        toleranceValuesbyIndex.put(4,0.0);
+        toleranceValuesbyIndex.put(5,0.5);
+        toleranceValuesbyIndex.put(6,0.25);
+        toleranceValuesbyIndex.put(7,0.1);
+        toleranceValuesbyIndex.put(8,0.05);
+        toleranceValuesbyIndex.put(9,0.0);
+        toleranceValuesbyIndex.put(10,5.0);
+        toleranceValuesbyIndex.put(11,10.0);
         
         colorValuesbyIndex = new HashMap<Integer, Color>();
         colorValuesbyIndex.put(0, Color.BLACK);
@@ -71,14 +56,17 @@ public class Calculs {
         colorValuesbyIndex.put(11, Color.SILVER);
     }
     
-    public static String Calcul5Bandes(List<String> bandes){
-        String chiffresSignificatifs = Colors.get(bandes.get(0)) + Colors.get(bandes.get(1))
-                + Colors.get(bandes.get(2));
-        Integer chiffresSignificatifsInt = Integer.parseInt(chiffresSignificatifs);
-        Integer value = chiffresSignificatifsInt * Multiplicateurs.get(bandes.get(3));
-        String tolerance = Tolerance.get(bandes.get(4));
+    public static String Calcul5Bandes(List<Integer> colorIndexes){
+        String bande1 = String.valueOf(colorIndexes.get(0));
+        String bande2 = String.valueOf(colorIndexes.get(1));
+        String bande3 = String.valueOf(colorIndexes.get(2));
         
-        String resultat = String.valueOf(value) + " ± " + tolerance;
-        return resultat;
+        Double value = Double.parseDouble(bande1+bande2+bande3);
+        value = value * multiplierValuesbyIndex.get(colorIndexes.get(3));
+
+        String tolerance = String.valueOf(toleranceValuesbyIndex.get(colorIndexes.get(4)));
+
+        String result = String.valueOf(value) + " ± " + tolerance ;
+        return result;
     }
 }

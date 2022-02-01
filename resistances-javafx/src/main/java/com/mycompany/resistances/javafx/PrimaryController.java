@@ -1,15 +1,14 @@
 package com.mycompany.resistances.javafx;
 
 import java.net.URL;
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -31,14 +30,19 @@ public class PrimaryController {
     private Rectangle Rcouleur2;
     @FXML
     private Slider Slider5;
+    private Double Slider5Value;
     @FXML
     private Slider Slider4;
+    private Double Slider4Value;
     @FXML
     private Slider Slider3;
+    private Double Slider3Value;
     @FXML
     private Slider Slider2;
+    private Double Slider2Value;
     @FXML
     private Slider Slider1;
+    private Double Slider1Value;
     @FXML
     private Pane Global;
     @FXML
@@ -49,6 +53,21 @@ public class PrimaryController {
     public void initialize(URL location, ResourceBundle resources) {
         image.setVisible(true);
     }
+    
+    public List<Integer> updateSliderValues(){
+        List<Integer> sliderValuesbyIndex = new ArrayList<>();
+        Double sliderValue = Slider1.getValue();
+        sliderValuesbyIndex.add(sliderValue.intValue());
+        sliderValue = Slider2.getValue();
+        sliderValuesbyIndex.add(sliderValue.intValue());
+        sliderValue = Slider3.getValue();
+        sliderValuesbyIndex.add(sliderValue.intValue());
+        sliderValue = Slider4.getValue();
+        sliderValuesbyIndex.add(sliderValue.intValue());
+        sliderValue = Slider5.getValue();
+        sliderValuesbyIndex.add(sliderValue.intValue());
+        return sliderValuesbyIndex;
+    }
    
     @FXML
     public void changeColor(MouseEvent event){
@@ -56,18 +75,28 @@ public class PrimaryController {
         Double sliderValue = slider.getValue();
         Integer sliderValueInt = sliderValue.intValue();
         Color color = App.colorValuesbyIndex.get(sliderValueInt);
-        if(slider == Slider1) 
+        
+        if(slider == Slider1) {
             Rcouleur1.setFill(color);
-        else if(slider == Slider2) 
+        }
+        else if(slider == Slider2) {
             Rcouleur2.setFill(color);
-        else if(slider == Slider3) 
+        }
+        else if(slider == Slider3) {
             Rcouleur3.setFill(color);
-        else if(slider == Slider4) 
+        }
+        else if(slider == Slider4) {
             Rcouleur4.setFill(color);
-        else if(slider == Slider5) 
+        }
+        else if(slider == Slider5) { 
             Rcouleur5.setFill(color);
+        }
         
         // Do calculations
+        Calculs calcul = new Calculs();
+        List<Integer> sliderValuesbyIndex = updateSliderValues();
+        String resistanceValue = calcul.Calcul5Bandes(sliderValuesbyIndex);
         
+        resistanceValueTextField.setText(resistanceValue);
     }
 }
