@@ -89,7 +89,7 @@ public class PrimaryController {
         // Do calculations
         Calculs calcul = new Calculs();
         List<Integer> sliderValuesbyIndex = updateSliderValues();
-        String resistanceValue = calcul.Calcul5Bandes(sliderValuesbyIndex);
+        String resistanceValue = calcul.calcul5Bandes(sliderValuesbyIndex);
         
         resistanceValueTextField.setText(resistanceValue);
     }

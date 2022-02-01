@@ -56,17 +56,48 @@ public class Calculs {
         colorValuesbyIndex.put(11, Color.SILVER);
     }
     
-    public static String Calcul5Bandes(List<Integer> colorIndexes){
+    public String calcul5Bandes(List<Integer> colorIndexes){
         String bande1 = String.valueOf(colorIndexes.get(0));
         String bande2 = String.valueOf(colorIndexes.get(1));
         String bande3 = String.valueOf(colorIndexes.get(2));
         
         Double value = Double.parseDouble(bande1+bande2+bande3);
         value = value * multiplierValuesbyIndex.get(colorIndexes.get(3));
+        
+        String formattedValue = formatResistanceValue(value);
 
         String tolerance = String.valueOf(toleranceValuesbyIndex.get(colorIndexes.get(4)));
 
-        String result = String.valueOf(value) + " ± " + tolerance ;
+        String result = formattedValue + " ± " + tolerance ;
+        return result;
+    }
+    
+    // Format in k, M, G instead of E3, E6, E9
+    public String formatResistanceValue(Double value){
+        Double newValue = 0.0;
+        String unit = "";
+        
+        if(value <1000){
+            newValue = value;
+            unit = "Ω";
+        }
+        
+        else if(value > 1000 && value < 1000000){
+            newValue = value / 1000;
+            unit = "kΩ";
+        }
+        
+        else if (value>1000000 && value < 1000000000){
+            newValue = value / 1000000;
+            unit = "MΩ";
+        }
+        
+        else if (value > 1000000000){
+            newValue = value / 1000000000;
+            unit = "GΩ";
+        }
+        
+        String result = String.valueOf(newValue) + unit;
         return result;
     }
 }
