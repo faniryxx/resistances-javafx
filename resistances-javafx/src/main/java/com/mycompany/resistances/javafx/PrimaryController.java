@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -42,8 +43,9 @@ public class PrimaryController {
     private Pane Global;
     @FXML
     private Pane PaneResistance;
-    @FXML
     private TextField resistanceValueTextField;
+    @FXML
+    private Label resistanceValueLabel;
         
     public void initialize(URL location, ResourceBundle resources) {
         image.setVisible(true);
@@ -91,6 +93,6 @@ public class PrimaryController {
         List<Integer> sliderValuesbyIndex = updateSliderValues();
         String resistanceValue = calcul.calcul5Bandes(sliderValuesbyIndex);
         
-        resistanceValueTextField.setText(resistanceValue);
+        resistanceValueLabel.setText(resistanceValue);
     }
 }
