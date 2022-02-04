@@ -5,13 +5,14 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="Global" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="1094.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.resistances.javafx.PrimaryController">
+<Pane fx:id="Global" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="1040.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.resistances.javafx.PrimaryController">
    <children>
       <Pane layoutX="5.0" layoutY="74.0" prefHeight="404.0" prefWidth="411.0">
          <children>
@@ -81,7 +82,7 @@
                </font>
             </Label>
          </children></Pane>
-      <Pane layoutX="438.0" layoutY="74.0" prefHeight="404.0" prefWidth="650.0">
+      <Pane layoutX="404.0" layoutY="74.0" prefHeight="404.0" prefWidth="650.0">
          <children>
             <Pane fx:id="PaneResistance" prefHeight="203.0" prefWidth="682.0">
                <children>
@@ -100,6 +101,11 @@
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Label>
+                  <Slider fx:id="Slider1" blockIncrement="1.0" layoutX="199.0" layoutY="54.0" majorTickUnit="1.0" max="9.0" minorTickCount="0" onMouseClicked="#changeColor" onMouseDragged="#changeColor" onMouseExited="#changeColor" onMousePressed="#changeColor" onMouseReleased="#changeColor" opacity="0.5" orientation="VERTICAL" prefHeight="91.0" prefWidth="14.0" snapToTicks="true" value="5.0" />
+                  <Slider fx:id="Slider2" blockIncrement="1.0" layoutX="264.0" layoutY="54.0" majorTickUnit="1.0" max="9.0" minorTickCount="0" onMouseClicked="#changeColor" onMouseDragged="#changeColor" onMouseExited="#changeColor" onMousePressed="#changeColor" onMouseReleased="#changeColor" opacity="0.5" orientation="VERTICAL" prefHeight="91.0" prefWidth="14.0" snapToTicks="true" value="6.0" />
+                  <Slider fx:id="Slider3" blockIncrement="1.0" layoutX="335.0" layoutY="54.0" majorTickUnit="1.0" max="9.0" minorTickCount="0" onMouseClicked="#changeColor" onMouseDragged="#changeColor" onMouseExited="#changeColor" onMousePressed="#changeColor" onMouseReleased="#changeColor" opacity="0.5" orientation="VERTICAL" prefHeight="91.0" prefWidth="14.0" snapToTicks="true" />
+                  <Slider fx:id="Slider4" blockIncrement="1.0" layoutX="405.0" layoutY="54.0" majorTickUnit="1.0" max="11.0" minorTickCount="0" onMouseClicked="#changeColor" onMouseDragged="#changeColor" onMouseExited="#changeColor" onMousePressed="#changeColor" onMouseReleased="#changeColor" opacity="0.5" orientation="VERTICAL" prefHeight="91.0" prefWidth="14.0" snapToTicks="true" value="2.0" />
+                  <Slider fx:id="Slider5" blockIncrement="1.0" layoutX="509.0" layoutY="54.0" majorTickUnit="1.0" max="11.0" minorTickCount="0" onMouseClicked="#changeColor" onMouseDragged="#changeColor" onMouseExited="#changeColor" onMousePressed="#changeColor" onMouseReleased="#changeColor" opacity="0.5" orientation="VERTICAL" prefHeight="91.0" prefWidth="14.0" snapToTicks="true" value="3.0" />
                </children>
             </Pane>
             <Pane layoutX="105.0" layoutY="237.0" prefHeight="129.0" prefWidth="458.0">
@@ -120,6 +126,6 @@
       </Pane>
       <Separator layoutX="14.0" layoutY="68.0" prefHeight="2.0" prefWidth="389.0" />
       <RadioButton disable="true" layoutX="13.0" layoutY="36.0" mnemonicParsing="false" selected="true" text="5 bandes" />
-      <Separator layoutX="455.0" layoutY="68.0" prefHeight="3.0" prefWidth="603.0" />
+      <Separator layoutX="421.0" layoutY="68.0" prefHeight="3.0" prefWidth="603.0" />
    </children>
 </Pane>
