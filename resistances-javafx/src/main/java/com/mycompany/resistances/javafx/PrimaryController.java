@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -46,9 +48,23 @@ public class PrimaryController {
     private TextField resistanceValueTextField;
     @FXML
     private Label resistanceValueLabel;
+    @FXML
+    private MenuButton band1MenuButton;
+    @FXML
+    private MenuButton band2MenuButton;
+    @FXML
+    private MenuButton band3MenuButton;
+    @FXML
+    private MenuButton band4MenuButton;
+    @FXML
+    private MenuButton band5MenuButton;
         
     public void initialize(URL location, ResourceBundle resources) {
         image.setVisible(true);
+    }
+
+    public void testMenuButton(){
+        
     }
     
     public List<Integer> updateSliderValues(){

@@ -96,6 +96,8 @@ public class Calculs {
             newValue = value / 1000000000;
             unit = "GΩ";
         }
+
+        newValue = Double.valueOf(Math.round(newValue));
         
         String result = String.valueOf(newValue) + unit;
         return result;
