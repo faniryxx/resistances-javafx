@@ -6,6 +6,7 @@ import java.util.List;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
@@ -123,46 +124,35 @@ public class PrimaryController {
     }
 
     @FXML
-    public void setBand1ComboBoxUpdated(){
-        Slider1.setValue(band1ComboBox.getValue().getIndex());
-        Rcouleur1.setFill(band1ComboBox.getValue().getColor());
-        updateResistanceValue();
-    }
-
-    @FXML
-    public void setBand2ComboBoxUpdated(){
-        Slider2.setValue(band2ComboBox.getValue().getIndex());
-        Rcouleur2.setFill(band2ComboBox.getValue().getColor());
-        updateResistanceValue();
-    }
-
-    @FXML
-    public void setBand3ComboBoxUpdated(){
-        Slider3.setValue(band3ComboBox.getValue().getIndex());
-        Rcouleur3.setFill(band3ComboBox.getValue().getColor());
-        updateResistanceValue();
-    }
-
-    @FXML
-    public void setBand4ComboBoxUpdated(){
-        Slider4.setValue(band4ComboBox.getValue().getIndex());
-        Rcouleur4.setFill(band4ComboBox.getValue().getColor());
-        updateResistanceValue();
-    }
-
-    @FXML
-    public void setBand5ComboBoxUpdated(){
-        Slider5.setValue(band5ComboBox.getValue().getIndex());
-        Rcouleur5.setFill(band5ComboBox.getValue().getColor());
+    public void testComboBoxUpdate(ActionEvent actionEvent){
+        ComboBox comboBox = (ComboBox) actionEvent.getSource();
+        if(comboBox == band1ComboBox){
+            Slider1.setValue(band1ComboBox.getValue().getIndex());
+            Rcouleur1.setFill(band1ComboBox.getValue().getColor());
+        }
+        else if(comboBox == band2ComboBox){
+            Slider2.setValue(band2ComboBox.getValue().getIndex());
+            Rcouleur2.setFill(band2ComboBox.getValue().getColor());
+        }
+        else if(comboBox == band3ComboBox){
+            Slider3.setValue(band3ComboBox.getValue().getIndex());
+            Rcouleur3.setFill(band3ComboBox.getValue().getColor());
+        }
+        else if(comboBox == band4ComboBox){
+            Slider4.setValue(band4ComboBox.getValue().getIndex());
+            Rcouleur4.setFill(band4ComboBox.getValue().getColor());
+        }
+        else {
+            Slider5.setValue(band5ComboBox.getValue().getIndex());
+            Rcouleur5.setFill(band5ComboBox.getValue().getColor());
+        }
         updateResistanceValue();
     }
 
     public void updateResistanceValue(){
-        // Do calculations
         Calculs calcul = new Calculs();
         List<Integer> sliderValuesbyIndex = updateSliderValues();
         String resistanceValue = calcul.calcul5Bandes(sliderValuesbyIndex);
-
         resistanceValueLabel.setText(resistanceValue);
     }
 
