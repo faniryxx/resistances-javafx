@@ -1,5 +1,6 @@
 package com.mycompany.resistances.javafx;
 
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
@@ -97,9 +98,12 @@ public class Calculs {
             unit = "GΩ";
         }
 
-        newValue = Double.valueOf(Math.round(newValue));
-        
-        String result = String.valueOf(newValue) + unit;
+        //new DecimalFormat("#.##").format(newValue);
+        String pattern = "#.##";
+        DecimalFormat decimalFormat = new DecimalFormat(pattern);
+        String formattedNewValue = decimalFormat.format(newValue);
+
+        String result = formattedNewValue + unit;
         return result;
     }
 }
