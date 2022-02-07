@@ -69,7 +69,7 @@ public class Calculs {
 
         String tolerance = String.valueOf(toleranceValuesbyIndex.get(colorIndexes.get(4)));
 
-        String result = formattedValue + " ± " + tolerance ;
+        String result = formattedValue + " ± " + tolerance + "%";
         return result;
     }
     
