@@ -3,7 +3,6 @@ package com.mycompany.resistances.javafx;
 import java.util.ArrayList;
 import java.util.List;
 
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
@@ -13,7 +12,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 public class PrimaryController {
@@ -72,7 +70,6 @@ public class PrimaryController {
         ObservableList<Colors> MultiplierToleranceColors = App.colorListMultiplierTolerance;
         band4ComboBox.setItems(MultiplierToleranceColors);
         band5ComboBox.setItems(MultiplierToleranceColors);
-
         band1ComboBox.setValue(App.colorListMultiplierTolerance.get(5));
         band2ComboBox.setValue(App.colorListMultiplierTolerance.get(6));
         band3ComboBox.setValue(App.colorListMultiplierTolerance.get(0));

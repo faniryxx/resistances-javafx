@@ -98,7 +98,6 @@ public class Calculs {
             unit = "GΩ";
         }
 
-        //new DecimalFormat("#.##").format(newValue);
         String pattern = "#.##";
         DecimalFormat decimalFormat = new DecimalFormat(pattern);
         String formattedNewValue = decimalFormat.format(newValue);
