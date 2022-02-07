@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<Pane fx:id="Global" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="1040.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.resistances.javafx.PrimaryController">
+<Pane fx:id="Global" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="1040.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.resistances.javafx.PrimaryController">
    <children>
       <Pane layoutX="5.0" layoutY="74.0" prefHeight="404.0" prefWidth="411.0">
          <children>
@@ -84,9 +90,9 @@
                         <Font size="33.0" />
                      </font>
                   </Label>
-                  <Label fx:id="resistanceValueLabel" alignment="CENTER" layoutX="142.0" layoutY="65.0" prefHeight="52.0" prefWidth="175.0" textAlignment="CENTER">
+                  <Label fx:id="resistanceValueLabel" alignment="CENTER" layoutX="121.0" layoutY="64.0" prefHeight="52.0" prefWidth="217.0" textAlignment="CENTER">
                      <font>
-                        <Font name="System Bold" size="24.0" />
+                        <Font name="System Bold" size="27.0" />
                      </font>
                   </Label>
                </children>
