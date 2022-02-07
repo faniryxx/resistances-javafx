@@ -3,15 +3,15 @@ package com.mycompany.resistances.javafx;
 import java.util.ArrayList;
 import java.util.List;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.Slider;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 public class PrimaryController {
@@ -56,10 +56,40 @@ public class PrimaryController {
     private ComboBox<Colors> band4ComboBox;
     @FXML
     private ComboBox<Colors> band5ComboBox;
+    @FXML
+    private ToggleGroup nombreBandes;
+    @FXML
+    private RadioButton radioButton4Bands;
+    @FXML
+    private RadioButton radioButton5Bands;
+
+    public void onBandNumberUpdated(){
+        nombreBandes.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
+            @Override
+            public void changed(ObservableValue<? extends Toggle> ov, Toggle old_toggle, Toggle new_toggle) {
+                // 4 bands selected
+                if ((RadioButton) nombreBandes.getSelectedToggle() == radioButton4Bands) {
+                    RadioButton button = (RadioButton) nombreBandes.getSelectedToggle();
+                    System.out.println("Button: " + button.getText());
+                    Slider3.setVisible(false);
+                    Rcouleur3.setVisible(false);
+                    band3ComboBox.setDisable(true);
+                }
+                else {
+                    RadioButton button = (RadioButton) nombreBandes.getSelectedToggle();
+                    System.out.println("Button: " + button.getText());
+                    Slider3.setVisible(true);
+                    Rcouleur3.setVisible(true);
+                    band3ComboBox.setDisable(false);
+                }
+            }
+        });
+    }
 
     public void initialize() {
         initComboBox();
         updateResistanceValue();
+        onBandNumberUpdated();
     }
 
     public void initComboBox(){
@@ -92,30 +122,35 @@ public class PrimaryController {
         return sliderValuesbyIndex;
     }
 
+    @FXML
     public void setBand1ComboBoxUpdated(){
         Slider1.setValue(band1ComboBox.getValue().getIndex());
         Rcouleur1.setFill(band1ComboBox.getValue().getColor());
         updateResistanceValue();
     }
 
+    @FXML
     public void setBand2ComboBoxUpdated(){
         Slider2.setValue(band2ComboBox.getValue().getIndex());
         Rcouleur2.setFill(band2ComboBox.getValue().getColor());
         updateResistanceValue();
     }
 
+    @FXML
     public void setBand3ComboBoxUpdated(){
         Slider3.setValue(band3ComboBox.getValue().getIndex());
         Rcouleur3.setFill(band3ComboBox.getValue().getColor());
         updateResistanceValue();
     }
 
+    @FXML
     public void setBand4ComboBoxUpdated(){
         Slider4.setValue(band4ComboBox.getValue().getIndex());
         Rcouleur4.setFill(band4ComboBox.getValue().getColor());
         updateResistanceValue();
     }
 
+    @FXML
     public void setBand5ComboBoxUpdated(){
         Slider5.setValue(band5ComboBox.getValue().getIndex());
         Rcouleur5.setFill(band5ComboBox.getValue().getColor());
