@@ -72,6 +72,21 @@ public class Calculs {
         String result = formattedValue + " ± " + tolerance + "%";
         return result;
     }
+
+    public String calcul4Bandes(List<Integer> colorIndexes){
+        String bande1 = String.valueOf(colorIndexes.get(0));
+        String bande2 = String.valueOf(colorIndexes.get(1));
+
+        Double value = Double.parseDouble(bande1+bande2);
+        value = value * multiplierValuesbyIndex.get(colorIndexes.get(3));
+
+        String formattedValue = formatResistanceValue(value);
+
+        String tolerance = String.valueOf(toleranceValuesbyIndex.get(colorIndexes.get(4)));
+
+        String result = formattedValue + " ± " + tolerance + "%";
+        return result;
+    }
     
     // Format in k, M, G instead of E3, E6, E9
     public String formatResistanceValue(Double value){

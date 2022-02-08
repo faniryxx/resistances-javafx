@@ -83,6 +83,7 @@ public class PrimaryController {
                     Rcouleur3.setVisible(true);
                     band3ComboBox.setDisable(false);
                 }
+                updateResistanceValue();
             }
         });
     }
@@ -150,9 +151,16 @@ public class PrimaryController {
     }
 
     public void updateResistanceValue(){
+        String resistanceValue = "";
         Calculs calcul = new Calculs();
         List<Integer> sliderValuesbyIndex = updateSliderValues();
-        String resistanceValue = calcul.calcul5Bandes(sliderValuesbyIndex);
+        // Si 4 bandes sélectionnées:
+        if ((RadioButton) nombreBandes.getSelectedToggle() == radioButton4Bands) {
+            resistanceValue = calcul.calcul4Bandes(sliderValuesbyIndex);
+        }
+        else {
+            resistanceValue = calcul.calcul5Bandes(sliderValuesbyIndex);
+        }
         resistanceValueLabel.setText(resistanceValue);
     }
 
