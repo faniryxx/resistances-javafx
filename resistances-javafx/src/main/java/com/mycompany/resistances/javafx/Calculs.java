@@ -1,5 +1,6 @@
 package com.mycompany.resistances.javafx;
 
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
@@ -68,7 +69,7 @@ public class Calculs {
 
         String tolerance = String.valueOf(toleranceValuesbyIndex.get(colorIndexes.get(4)));
 
-        String result = formattedValue + " ± " + tolerance ;
+        String result = formattedValue + " ± " + tolerance + "%";
         return result;
     }
     
@@ -96,8 +97,12 @@ public class Calculs {
             newValue = value / 1000000000;
             unit = "GΩ";
         }
-        
-        String result = String.valueOf(newValue) + unit;
+
+        String pattern = "#.##";
+        DecimalFormat decimalFormat = new DecimalFormat(pattern);
+        String formattedNewValue = decimalFormat.format(newValue);
+
+        String result = formattedNewValue + unit;
         return result;
     }
 }
