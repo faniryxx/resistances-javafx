@@ -67,6 +67,8 @@ public class PrimaryController {
     @FXML
     private ToggleGroup nombreBandes;
     @FXML
+    private RadioButton radioButton3Bands;
+    @FXML
     private RadioButton radioButton4Bands;
     @FXML
     private RadioButton radioButton5Bands;
@@ -78,19 +80,35 @@ public class PrimaryController {
         nombreBandes.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override
             public void changed(ObservableValue<? extends Toggle> ov, Toggle old_toggle, Toggle new_toggle) {
-                if ((RadioButton) nombreBandes.getSelectedToggle() == radioButton4Bands) {
+                if ((RadioButton) nombreBandes.getSelectedToggle() == radioButton3Bands) {
                     RadioButton button = (RadioButton) nombreBandes.getSelectedToggle();
                     System.out.println("Button: " + button.getText());
                     Slider3.setVisible(false);
                     Rcouleur3.setVisible(false);
                     band3ComboBox.setDisable(true);
+                    Slider5.setVisible(false);
+                    Rcouleur5.setVisible(false);
+                    band5ComboBox.setDisable(true);
                 }
-                else {
+                else if ((RadioButton) nombreBandes.getSelectedToggle() == radioButton4Bands) {
+                    RadioButton button = (RadioButton) nombreBandes.getSelectedToggle();
+                    System.out.println("Button: " + button.getText());
+                    Slider3.setVisible(false);
+                    Rcouleur3.setVisible(false);
+                    band3ComboBox.setDisable(true);
+                    Slider5.setVisible(true);
+                    Rcouleur5.setVisible(true);
+                    band5ComboBox.setDisable(false);
+                }
+                else if ((RadioButton) nombreBandes.getSelectedToggle() == radioButton5Bands) {
                     RadioButton button = (RadioButton) nombreBandes.getSelectedToggle();
                     System.out.println("Button: " + button.getText());
                     Slider3.setVisible(true);
                     Rcouleur3.setVisible(true);
                     band3ComboBox.setDisable(false);
+                    Slider5.setVisible(true);
+                    Rcouleur5.setVisible(true);
+                    band5ComboBox.setDisable(false);
                 }
                 updateResistanceValue();
             }
@@ -183,7 +201,10 @@ public class PrimaryController {
         String resistanceValue = "";
         Calculs calcul = new Calculs();
         List<Integer> sliderValuesbyIndex = updateSliderValues();
-        if ((RadioButton) nombreBandes.getSelectedToggle() == radioButton4Bands) {
+        if ((RadioButton) nombreBandes.getSelectedToggle() == radioButton3Bands) {
+            resistanceValue = calcul.calcul3Bandes(sliderValuesbyIndex);
+        }
+        else if ((RadioButton) nombreBandes.getSelectedToggle() == radioButton4Bands) {
             resistanceValue = calcul.calcul4Bandes(sliderValuesbyIndex);
         }
         else {

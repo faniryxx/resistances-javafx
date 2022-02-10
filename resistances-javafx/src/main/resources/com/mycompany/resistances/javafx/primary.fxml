@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="Global" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="1040.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.resistances.javafx.PrimaryController">
+<Pane fx:id="Global" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="444.0" prefWidth="1040.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.resistances.javafx.PrimaryController">
    <children>
       <Pane layoutX="5.0" layoutY="74.0" prefHeight="404.0" prefWidth="411.0">
          <children>
@@ -57,9 +57,9 @@
             <ComboBox fx:id="band4ComboBox" layoutX="9.0" layoutY="229.0" onAction="#comboBoxUpdated" prefHeight="28.0" prefWidth="389.0" />
             <ComboBox fx:id="band5ComboBox" layoutX="9.0" layoutY="287.0" onAction="#comboBoxUpdated" prefHeight="28.0" prefWidth="389.0" />
          </children></Pane>
-      <Pane layoutX="404.0" layoutY="74.0" prefHeight="404.0" prefWidth="650.0">
+      <Pane layoutX="404.0" layoutY="74.0" prefHeight="372.0" prefWidth="650.0">
          <children>
-            <Pane fx:id="PaneResistance" prefHeight="203.0" prefWidth="682.0">
+            <Pane fx:id="PaneResistance" layoutY="20.0" prefHeight="203.0" prefWidth="682.0">
                <children>
                   <ImageView fx:id="ImageRes" fitHeight="129.0" fitWidth="603.0" layoutX="31.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -71,7 +71,7 @@
                   <Rectangle fx:id="Rcouleur4" arcHeight="5.0" arcWidth="5.0" fill="#db0000" height="91.0" layoutX="372.5" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" width="28.0" />
                   <Rectangle fx:id="Rcouleur3" arcHeight="5.0" arcWidth="5.0" height="91.0" layoutX="301.25" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" width="28.0" />
                   <Rectangle fx:id="Rcouleur2" arcHeight="5.0" arcWidth="5.0" fill="#0d00bf" height="91.0" layoutX="230.0" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" width="28.0" />
-                  <Label layoutX="16.0" prefHeight="29.0" prefWidth="113.0" text="Résistance">
+                  <Label layoutX="16.0" layoutY="-22.0" prefHeight="29.0" prefWidth="113.0" text="Résistance">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
@@ -100,16 +100,17 @@
          </children>
       </Pane>
       <Separator layoutX="14.0" layoutY="68.0" prefHeight="2.0" prefWidth="389.0" />
-      <RadioButton fx:id="radioButton5Bands" layoutX="111.0" layoutY="40.0" mnemonicParsing="false" selected="true" text="5 bandes">
+      <RadioButton fx:id="radioButton5Bands" layoutX="190.0" layoutY="40.0" mnemonicParsing="false" selected="true" text="5 bandes">
          <toggleGroup>
             <ToggleGroup fx:id="nombreBandes" />
          </toggleGroup></RadioButton>
       <Separator layoutX="421.0" layoutY="68.0" prefHeight="3.0" prefWidth="603.0" />
-      <RadioButton fx:id="radioButton4Bands" layoutX="14.0" layoutY="40.0" mnemonicParsing="false" text="4 bandes" toggleGroup="$nombreBandes" />
-      <ImageView fitHeight="29.0" fitWidth="70.0" layoutX="953.0" layoutY="41.0" onMouseClicked="#openGithubPage" pickOnBounds="true" preserveRatio="true">
+      <RadioButton fx:id="radioButton4Bands" layoutX="102.0" layoutY="40.0" mnemonicParsing="false" text="4 bandes" toggleGroup="$nombreBandes" />
+      <ImageView fitHeight="29.0" fitWidth="70.0" layoutX="953.0" layoutY="39.0" onMouseClicked="#openGithubPage" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../Images/github-logo.png" />
          </image>
       </ImageView>
+      <RadioButton fx:id="radioButton3Bands" layoutX="15.0" layoutY="40.0" mnemonicParsing="false" text="3 bandes" toggleGroup="$nombreBandes" />
    </children>
 </Pane>

@@ -108,6 +108,22 @@ public class Calculs {
     }
 
     /**
+     * Calcul de la résistance à 3 bandes. La tolérance est fixée à 20%.
+     * @param colorIndexes Index sélectionnés des sliders.
+     * @return Une chaîne de caractères formatée avec la valeur calculée de la résistance.
+     */
+    public String calcul3Bandes(List<Integer> colorIndexes){
+        String bande1 = String.valueOf(colorIndexes.get(0));
+        String bande2 = String.valueOf(colorIndexes.get(1));
+        Double value = Double.parseDouble(bande1+bande2);
+        value = value * multiplierValuesbyIndex.get(colorIndexes.get(3));
+        String formattedValue = formatResistanceValue(value);
+        String tolerance = "20";
+        String result = formattedValue + " ± " + tolerance + "%";
+        return result;
+    }
+
+    /**
      * Formate une valeur en double en notations usuelles de mesure de résistance:
      * Ω, kΩ, MΩ, GΩ au lieu de puissances de dix
      * @param value La valeur de résistance à formater.
