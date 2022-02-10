@@ -1,5 +1,10 @@
 package com.mycompany.resistances.javafx;
 
+import java.awt.*;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +14,8 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
@@ -216,5 +223,19 @@ public class PrimaryController {
             band5ComboBox.setValue(new Colors(sliderValueInt, color.getColor(), color.toString()));
         }
         updateResistanceValue();
+    }
+
+    /**
+     * Ouvre le projet sur Github quand on clique sur le logo Github.
+     * Source: https://stackoverflow.com/a/47645799
+     */
+    public void openGithubPage(){
+        try {
+            Desktop.getDesktop().browse(new URL("https://github.com/faniryxx/resistances-javafx").toURI());
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
     }
 }
