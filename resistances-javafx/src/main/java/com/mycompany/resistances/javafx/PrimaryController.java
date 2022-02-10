@@ -278,7 +278,7 @@ public class PrimaryController {
      */
     public void openJavadoc(){
         try {
-            Desktop.getDesktop().browse(new URL("https://github.com/faniryxx/resistances-javafx").toURI());
+            Desktop.getDesktop().browse(new URL("https://resistances-javafx.javadoc.zazadago.fr").toURI());
         } catch (IOException e) {
             e.printStackTrace();
         } catch (URISyntaxException e) {
