@@ -49,8 +49,8 @@ public class Calculs {
         toleranceValuesbyIndex.put(0,0.0);
         toleranceValuesbyIndex.put(1,1.0);
         toleranceValuesbyIndex.put(2,2.0);
-        toleranceValuesbyIndex.put(3,0.0);
-        toleranceValuesbyIndex.put(4,0.0);
+        toleranceValuesbyIndex.put(3,3.0);
+        toleranceValuesbyIndex.put(4,4.0);
         toleranceValuesbyIndex.put(5,0.5);
         toleranceValuesbyIndex.put(6,0.25);
         toleranceValuesbyIndex.put(7,0.1);
