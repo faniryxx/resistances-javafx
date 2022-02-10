@@ -85,7 +85,6 @@ public class PrimaryController {
             public void changed(ObservableValue<? extends Toggle> ov, Toggle old_toggle, Toggle new_toggle) {
                 if ((RadioButton) nombreBandes.getSelectedToggle() == radioButton3Bands) {
                     RadioButton button = (RadioButton) nombreBandes.getSelectedToggle();
-                    System.out.println("Button: " + button.getText());
                     Slider3.setVisible(false);
                     Rcouleur3.setVisible(false);
                     band3ComboBox.setDisable(true);
@@ -95,7 +94,6 @@ public class PrimaryController {
                 }
                 else if ((RadioButton) nombreBandes.getSelectedToggle() == radioButton4Bands) {
                     RadioButton button = (RadioButton) nombreBandes.getSelectedToggle();
-                    System.out.println("Button: " + button.getText());
                     Slider3.setVisible(false);
                     Rcouleur3.setVisible(false);
                     band3ComboBox.setDisable(true);
@@ -105,7 +103,6 @@ public class PrimaryController {
                 }
                 else if ((RadioButton) nombreBandes.getSelectedToggle() == radioButton5Bands) {
                     RadioButton button = (RadioButton) nombreBandes.getSelectedToggle();
-                    System.out.println("Button: " + button.getText());
                     Slider3.setVisible(true);
                     Rcouleur3.setVisible(true);
                     band3ComboBox.setDisable(false);
