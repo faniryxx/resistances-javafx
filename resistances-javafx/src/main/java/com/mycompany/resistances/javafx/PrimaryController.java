@@ -250,10 +250,36 @@ public class PrimaryController {
     }
 
     /**
-     * Ouvre le projet sur Github quand on clique sur le logo Github.
+     * Ouvre le projet sur Github sur un navigateur quand on clique sur le logo Github.
      * Source: https://stackoverflow.com/a/47645799
      */
     public void openGithubPage(){
+        try {
+            Desktop.getDesktop().browse(new URL("https://github.com/faniryxx/resistances-javafx").toURI());
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Ouvre la documentation sur un navigateur.
+     */
+    public void openDoc(){
+        try {
+            Desktop.getDesktop().browse(new URL("https://github.com/faniryxx/resistances-javafx").toURI());
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Ouvre le Javadoc sur un navigateur.
+     */
+    public void openJavadoc(){
         try {
             Desktop.getDesktop().browse(new URL("https://github.com/faniryxx/resistances-javafx").toURI());
         } catch (IOException e) {
