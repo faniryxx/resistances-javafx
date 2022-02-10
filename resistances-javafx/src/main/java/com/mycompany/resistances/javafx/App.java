@@ -21,7 +21,16 @@ import javafx.scene.paint.Color;
 public class App extends Application {
     private static Scene scene;
     public static Calculs calcul;
+
+    /**
+     * Liste de couleurs de type Colors (voir Colors.java) utilisée dans les calculs pour les trois premières bandes.
+     */
     public static ObservableList<Colors> colorList;
+
+    /**
+     * Liste de couleurs de type Colors (voir Colors.java) utilisée dans les calculs pour les bandes de multiplicateur
+     * et de tolérance.
+     */
     public static ObservableList<Colors> colorListMultiplierTolerance;
 
     @Override
@@ -35,6 +44,9 @@ public class App extends Application {
         stage.show();
     }
 
+    /**
+     * Population des listes de Colors au lancement de l'application.
+     */
     public void initColorList(){
         colorList = FXCollections.observableArrayList();
         colorList.add(new Colors(0, Color.BLACK, "BLACK"));
@@ -74,5 +86,4 @@ public class App extends Application {
     public static void main(String[] args) {
         launch();
     }
-
 }

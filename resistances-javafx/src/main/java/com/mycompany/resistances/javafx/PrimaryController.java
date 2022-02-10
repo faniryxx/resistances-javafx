@@ -22,6 +22,9 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
+/**
+ * Controller de la page d'accueil de l'application.
+ */
 public class PrimaryController {
 
     private ImageView image;
