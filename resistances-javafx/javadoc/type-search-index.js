@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"com.mycompany.resistances.javafx","l":"App"},{"p":"com.mycompany.resistances.javafx","l":"Calculs"},{"p":"com.mycompany.resistances.javafx","l":"Colors"},{"p":"com.mycompany.resistances.javafx","l":"PrimaryController"}];updateSearchResults();

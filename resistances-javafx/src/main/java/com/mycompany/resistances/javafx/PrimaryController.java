@@ -64,11 +64,13 @@ public class PrimaryController {
     @FXML
     private RadioButton radioButton5Bands;
 
-    public void onBandNumberUpdated(){
+    /**
+     * Ajout d'un listener pour détecter les changements de nombre de bandes.
+     */
+    public void addListenerToToggles(){
         nombreBandes.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override
             public void changed(ObservableValue<? extends Toggle> ov, Toggle old_toggle, Toggle new_toggle) {
-                // 4 bands selected
                 if ((RadioButton) nombreBandes.getSelectedToggle() == radioButton4Bands) {
                     RadioButton button = (RadioButton) nombreBandes.getSelectedToggle();
                     System.out.println("Button: " + button.getText());
@@ -88,12 +90,18 @@ public class PrimaryController {
         });
     }
 
+    /**
+     * Initialisation des composants fxml.
+     */
     public void initialize() {
         initComboBox();
         updateResistanceValue();
-        onBandNumberUpdated();
+        addListenerToToggles();
     }
 
+    /**
+     * Initialisation des des ComboBox et affectation des valeurs par défaut au lancement de l'application.
+     */
     public void initComboBox(){
         ObservableList<Colors> colors = App.colorList;
         band1ComboBox.setItems(colors);
@@ -108,7 +116,12 @@ public class PrimaryController {
         band4ComboBox.setValue(App.colorListMultiplierTolerance.get(2));
         band5ComboBox.setValue(App.colorListMultiplierTolerance.get(3));
     }
-    
+
+    /**
+     * Fonction qui récupère les valeurs actuelles des sliders.
+     * @return Une liste d'int qui correspond aux valeurs des sliders. L'index de chaque valeur correspond au numéro de
+     * la bande.
+     */
     public List<Integer> updateSliderValues(){
         List<Integer> sliderValuesbyIndex = new ArrayList<>();
         Double sliderValue = Slider1.getValue();
@@ -124,8 +137,13 @@ public class PrimaryController {
         return sliderValuesbyIndex;
     }
 
+    /**
+     * Fonction de callback appellée à chaque fois qu'une ComboBox est modifiée.
+     * Les sliders sont mis à jour à chaque changement de valeur des ComboBox.
+     * @param actionEvent
+     */
     @FXML
-    public void testComboBoxUpdate(ActionEvent actionEvent){
+    public void comboBoxUpdated(ActionEvent actionEvent){
         ComboBox comboBox = (ComboBox) actionEvent.getSource();
         if(comboBox == band1ComboBox){
             Slider1.setValue(band1ComboBox.getValue().getIndex());
@@ -150,11 +168,14 @@ public class PrimaryController {
         updateResistanceValue();
     }
 
+    /**
+     * Actualisation de la valeur affichée de la résistance.
+     * Appellée à chaque modification des ComboBox ou des sliders.
+     */
     public void updateResistanceValue(){
         String resistanceValue = "";
         Calculs calcul = new Calculs();
         List<Integer> sliderValuesbyIndex = updateSliderValues();
-        // Si 4 bandes sélectionnées:
         if ((RadioButton) nombreBandes.getSelectedToggle() == radioButton4Bands) {
             resistanceValue = calcul.calcul4Bandes(sliderValuesbyIndex);
         }
@@ -164,38 +185,36 @@ public class PrimaryController {
         resistanceValueLabel.setText(resistanceValue);
     }
 
+    /**
+     * Fonction qui change les couleurs de chaque bande au fur et à mesure que les valeurs des sliders changent.
+     * @param event
+     */
     @FXML
     public void changeColor(MouseEvent event){
         Slider slider = (Slider)event.getSource();
         Double sliderValue = slider.getValue();
         Integer sliderValueInt = sliderValue.intValue();
         Colors color = App.colorListMultiplierTolerance.get(sliderValueInt);
-        
         if(slider == Slider1) {
             Rcouleur1.setFill(color.getColor());
             band1ComboBox.setValue(new Colors(sliderValueInt, color.getColor(), color.toString()));
         }
-        
         else if(slider == Slider2) {
             Rcouleur2.setFill(color.getColor());
             band2ComboBox.setValue(new Colors(sliderValueInt, color.getColor(), color.toString()));
         }
-        
         else if(slider == Slider3) {
             Rcouleur3.setFill(color.getColor());
             band3ComboBox.setValue(new Colors(sliderValueInt, color.getColor(), color.toString()));
         }
-        
         else if(slider == Slider4) {
             Rcouleur4.setFill(color.getColor());
             band4ComboBox.setValue(new Colors(sliderValueInt, color.getColor(), color.toString()));
         }
-        
         else if(slider == Slider5) {
             Rcouleur5.setFill(color.getColor());
             band5ComboBox.setValue(new Colors(sliderValueInt, color.getColor(), color.toString()));
         }
-
         updateResistanceValue();
     }
 }

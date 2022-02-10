@@ -6,14 +6,31 @@ import java.util.List;
 import java.util.ArrayList;
 import javafx.scene.paint.Color;
 
+/**
+ * Classe comprenant toutes les méthodes de calcul
+ */
 public class Calculs {
-
+    /**
+     * HashMap utilisée pour faire l'association entre les index et les couleurs.
+     * Les calculs sont faits en utilisant directement l'index sélectionné des sliders
+     * et des ComboBox.
+     */
     public static HashMap<Integer, Color> colorValuesbyIndex;
+
+    /**
+     * HashMap utilisée pour le calcul des multiplicateurs.
+     */
     public static HashMap<Integer, Double> multiplierValuesbyIndex;
+
+    /**
+     * HashMap utilisée pour le calcul de la tolérance.
+     */
     public static HashMap<Integer, Double> toleranceValuesbyIndex;
 
+    /**
+     * Le constructeur est appellé pour initialiser les valeurs des HashMap.
+     */
     Calculs(){
-        
         multiplierValuesbyIndex = new HashMap<Integer, Double>();
         multiplierValuesbyIndex.put(0,1.0);
         multiplierValuesbyIndex.put(1,10.0);
@@ -56,67 +73,68 @@ public class Calculs {
         colorValuesbyIndex.put(10, Color.GOLD);
         colorValuesbyIndex.put(11, Color.SILVER);
     }
-    
+
+    /**
+     * Calcul de la résistance à 5 bandes.
+     * @param colorIndexes Index sélectionnés des sliders.
+     * @return Une chaîne de caractères formatée avec la valeur calculée de la résistance.
+     */
     public String calcul5Bandes(List<Integer> colorIndexes){
         String bande1 = String.valueOf(colorIndexes.get(0));
         String bande2 = String.valueOf(colorIndexes.get(1));
         String bande3 = String.valueOf(colorIndexes.get(2));
-        
         Double value = Double.parseDouble(bande1+bande2+bande3);
         value = value * multiplierValuesbyIndex.get(colorIndexes.get(3));
-        
         String formattedValue = formatResistanceValue(value);
-
         String tolerance = String.valueOf(toleranceValuesbyIndex.get(colorIndexes.get(4)));
-
         String result = formattedValue + " ± " + tolerance + "%";
         return result;
     }
 
+    /**
+     * Calcul de la résistance à 4 bandes.
+     * @param colorIndexes Index sélectionnés des sliders.
+     * @return Une chaîne de caractères formatée avec la valeur calculée de la résistance.
+     */
     public String calcul4Bandes(List<Integer> colorIndexes){
         String bande1 = String.valueOf(colorIndexes.get(0));
         String bande2 = String.valueOf(colorIndexes.get(1));
-
         Double value = Double.parseDouble(bande1+bande2);
         value = value * multiplierValuesbyIndex.get(colorIndexes.get(3));
-
         String formattedValue = formatResistanceValue(value);
-
         String tolerance = String.valueOf(toleranceValuesbyIndex.get(colorIndexes.get(4)));
-
         String result = formattedValue + " ± " + tolerance + "%";
         return result;
     }
-    
-    // Format in k, M, G instead of E3, E6, E9
+
+    /**
+     * Formate une valeur en double en notations usuelles de mesure de résistance:
+     * Ω, kΩ, MΩ, GΩ au lieu de puissances de dix
+     * @param value La valeur de résistance à formater.
+     * @return Une chaîne de caractères formatée avec la valeur de la résistance.
+     */
     public String formatResistanceValue(Double value){
         Double newValue = 0.0;
         String unit = "";
-        
         if(value <1000){
             newValue = value;
             unit = "Ω";
         }
-        
         else if(value > 1000 && value < 1000000){
             newValue = value / 1000;
             unit = "kΩ";
         }
-        
         else if (value>1000000 && value < 1000000000){
             newValue = value / 1000000;
             unit = "MΩ";
         }
-        
         else if (value > 1000000000){
             newValue = value / 1000000000;
             unit = "GΩ";
         }
-
         String pattern = "#.##";
         DecimalFormat decimalFormat = new DecimalFormat(pattern);
         String formattedNewValue = decimalFormat.format(newValue);
-
         String result = formattedNewValue + unit;
         return result;
     }

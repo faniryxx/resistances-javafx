@@ -19,10 +19,8 @@ import javafx.scene.paint.Color;
  * JavaFX App
  */
 public class App extends Application {
-
     private static Scene scene;
     public static Calculs calcul;
-
     public static ObservableList<Colors> colorList;
     public static ObservableList<Colors> colorListMultiplierTolerance;
 

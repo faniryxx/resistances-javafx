@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.Slider?>
-<?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<Pane fx:id="Global" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="1040.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.resistances.javafx.PrimaryController">
+<Pane fx:id="Global" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="1040.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.resistances.javafx.PrimaryController">
    <children>
       <Pane layoutX="5.0" layoutY="74.0" prefHeight="404.0" prefWidth="411.0">
          <children>
@@ -51,11 +45,11 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <ComboBox fx:id="band1ComboBox" layoutX="9.0" layoutY="57.0" onAction="#testComboBoxUpdate" prefHeight="28.0" prefWidth="389.0" />
-            <ComboBox fx:id="band2ComboBox" layoutX="9.0" layoutY="114.0" onAction="#testComboBoxUpdate" prefHeight="28.0" prefWidth="389.0" />
-            <ComboBox fx:id="band3ComboBox" layoutX="9.0" layoutY="170.0" onAction="#testComboBoxUpdate" prefHeight="28.0" prefWidth="389.0" />
-            <ComboBox fx:id="band4ComboBox" layoutX="9.0" layoutY="229.0" onAction="#testComboBoxUpdate" prefHeight="28.0" prefWidth="389.0" />
-            <ComboBox fx:id="band5ComboBox" layoutX="9.0" layoutY="287.0" onAction="#testComboBoxUpdate" prefHeight="28.0" prefWidth="389.0" />
+            <ComboBox fx:id="band1ComboBox" layoutX="9.0" layoutY="57.0" onAction="#comboBoxUpdated" prefHeight="28.0" prefWidth="389.0" />
+            <ComboBox fx:id="band2ComboBox" layoutX="9.0" layoutY="114.0" onAction="#comboBoxUpdated" prefHeight="28.0" prefWidth="389.0" />
+            <ComboBox fx:id="band3ComboBox" layoutX="9.0" layoutY="170.0" onAction="#comboBoxUpdated" prefHeight="28.0" prefWidth="389.0" />
+            <ComboBox fx:id="band4ComboBox" layoutX="9.0" layoutY="229.0" onAction="#comboBoxUpdated" prefHeight="28.0" prefWidth="389.0" />
+            <ComboBox fx:id="band5ComboBox" layoutX="9.0" layoutY="287.0" onAction="#comboBoxUpdated" prefHeight="28.0" prefWidth="389.0" />
          </children></Pane>
       <Pane layoutX="404.0" layoutY="74.0" prefHeight="404.0" prefWidth="650.0">
          <children>
