@@ -3,7 +3,7 @@
 Bienvenue dans la documentation du projet **resistances-javafx** de Nathan RANAIVO et Lucas LANDAIS.
 Cette documentation vous permettra d'avoir une vision d'ensemble sur le fonctionnement de l'application et de ses fonctionnalités. 
 
-Cette documentation est également disponible [ici]("https://resistances-javafx.docs.zazadago.fr") et le javadoc est disponible [ici]("https://resistances-javafx.javadoc.zazadago.fr").
+Cette documentation est également disponible [ici](https://resistances-javafx.docs.zazadago.fr) et le javadoc est disponible [ici](https://resistances-javafx.javadoc.zazadago.fr).
 
 ## Introduction
 
