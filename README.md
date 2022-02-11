@@ -3,6 +3,8 @@
 Bienvenue dans la documentation du projet **resistances-javafx** de Nathan RANAIVO et Lucas LANDAIS.
 Cette documentation vous permettra d'avoir une vision d'ensemble sur le fonctionnement de l'application et de ses fonctionnalités. 
 
+Cette documentation est également disponible [ici]("https://resistances-javafx.docs.zazadago.fr") et le javadoc est disponible [ici]("https://resistances-javafx.javadoc.zazadago.fr").
+
 ## Introduction
 
 Ce projet a été réalisé dans le cadre de l'évaluation du module **IHM** de **CIPA4** option **GL**.
@@ -22,7 +24,7 @@ Nous avons eu la possibilité d'être libres de nos actions et d'ajouter des fon
 *	Il peut indiquer a présent les couleurs des bandes soit par les menus déroulants dans la partie gauche de la fenêtre, soit par les sliders situés directement à droite de chacune des bandes. 
 *	La résistance calculée se met à jour automatiquement au fur et à mesure que l'utilisateur effectue ses changements.
 
-![application](application.png)
+![application](./resistances-javafx/src/main/resources/Images/application.png)
 
 
 ## Description des fonctionnalités
