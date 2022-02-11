@@ -19,12 +19,11 @@ Nous avons eu la possibilité d'être libres de nos actions et d'ajouter des fon
 
 ## Déroulement de l'application
 
-*	Lancer l'application.
-*	L'utilisateur se retrouve sur la fenêtre principale avec comme première possibilité de choisir le nombre de bandes de la résistance à calculer.
-*	Il peut indiquer a présent les couleurs des bandes soit par les menus déroulants dans la partie gauche de la fenêtre, soit par les sliders situés directement à droite de chacune des bandes. 
-*	La résistance calculée se met à jour automatiquement au fur et à mesure que l'utilisateur effectue ses changements.
-
-![application](./resistances-javafx/src/main/resources/Images/application.png)
+* Lancer l'application.
+  ![application](./resistances-javafx/src/main/resources/Images/application.png)
+* L'utilisateur se retrouve sur la fenêtre principale avec comme première possibilité de choisir le nombre de bandes de la résistance à calculer.
+* Il peut indiquer a présent les couleurs des bandes soit par les menus déroulants dans la partie gauche de la fenêtre, soit par les sliders situés directement à droite de chacune des bandes. 
+* La résistance calculée se met à jour automatiquement au fur et à mesure que l'utilisateur effectue ses changements.
 
 
 ## Description des fonctionnalités
