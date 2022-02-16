@@ -1,3 +1,9 @@
+# Avant de commencer
+
+Cette documentation ainsi que la javadoc étaient accessibles sur un site web hébergé chez moi à la livraison de la production. Cependant, suite à une mise à jour de la box SFR apparemment irréversible, le menu NAT de ma box a disparu, il m'est alors impossible de faire de la translation d'adresses et de continuer d'héberger des sites web.
+
+Le Javadoc est disponible dans le dossier resistances-javafx/javadoc.
+
 # Documentation
 
 Bienvenue dans la documentation du projet **resistances-javafx** de Nathan RANAIVO et Lucas LANDAIS.
