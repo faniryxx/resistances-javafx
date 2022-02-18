@@ -4,6 +4,8 @@ Cette documentation ainsi que la javadoc étaient accessibles sur un site web h�
 
 Le Javadoc est disponible dans le dossier resistances-javafx/javadoc.
 
+*Mise à jour au 18/02/22: la doc et la javadoc sont de nouveau accessibles.*
+
 # Documentation
 
 Bienvenue dans la documentation du projet **resistances-javafx** de Nathan RANAIVO et Lucas LANDAIS.
